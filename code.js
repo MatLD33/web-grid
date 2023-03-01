@@ -1,3 +1,5 @@
+/*Mattéo Leturcq--Daligaux*/
+
 document.addEventListener("DOMContentLoaded", () => {
   // Initial clean up. DO NOT REMOVE.
   initialCleanup();
