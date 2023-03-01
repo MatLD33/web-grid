@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     cube.addEventListener("click", () => {
       console.log("Grille clické")
       cube.classList.add("clicked")
+      cube.style.backgroundColor = randomColor()
     })
 
     cube.addEventListener("mouseover", () => {
