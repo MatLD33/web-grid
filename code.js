@@ -4,6 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initial clean up. DO NOT REMOVE.
   initialCleanup();
 
+  const random255 = () => Math.floor(Math.random() * 255)
+  const randomColor = () =>
+    `rgba(${random255()},${random255()},${random255()},1`
+
   let button = document.getElementById("btn-add-line")
   button.addEventListener("click", () => {
     console.log("C'est clické !")
@@ -13,9 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
       gridcube.appendChild(new_div)
       new_div.addEventListener("click", () => {
         console.log("Grille clické")
-        const random255 = () => Math.floor(Math.random() * 255)
-        const randomColor = () =>
-          `rgba(${random255()},${random255()},${random255()},1`
+        new_div.style.backgroundColor = randomColor()
+      })
+      new_div.addEventListener("mouseover", () => {
         new_div.style.backgroundColor = randomColor()
       })
     }
@@ -25,9 +29,10 @@ document.addEventListener("DOMContentLoaded", () => {
   for (let cube of gridcube.children) {
     cube.addEventListener("click", () => {
       console.log("Grille clické")
-      const random255 = () => Math.floor(Math.random() * 255)
-      const randomColor = () =>
-        `rgba(${random255()},${random255()},${random255()},1`
+      cube.classList.add("clicked")
+    })
+
+    cube.addEventListener("mouseover", () => {
       cube.style.backgroundColor = randomColor()
     })
   }
